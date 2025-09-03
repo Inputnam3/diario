@@ -1,0 +1,48 @@
+# Resumo do Progresso - 29/08/2025
+
+## Correções Realizadas
+
+1. **Correção do serviço OpenAI**:
+   - Resolvido erro de parsing de JSON nas respostas da API
+   - Adicionado tratamento para remover marcadores de código markdown
+   - Corrigido erros de sintaxe no arquivo `openai-processing.service.ts`
+   - Implementado modelo `gpt-4o-mini` (mais econômico)
+
+2. **Atualização do formato de resposta**:
+   - Modificado método `generateNutritionSummary` para novo formato
+   - Adicionado seção "Resumo do Dia" com:
+     * Calorias Consumidas
+     * Calorias Queimadas (fixo em 0)
+     * Calorias Restantes (baseado em 2000 kcal/dia)
+   - Mantido emojis e formatação solicitada
+
+3. **Estrutura alternative-ai**:
+   - Criada estrutura completa como backup
+   - Serviços para Google Cloud, Azure e APIs nutricionais
+   - Pronta para uso quando necessário migrar de OpenAI
+
+## Status Atual
+
+- Servidor backend funcionando corretamente
+- Integração WhatsApp ativa
+- Processamento de mensagens com OpenAI funcionando
+- Respostas formatadas conforme novo modelo
+
+## Próximos Passos
+
+- Testar diferentes tipos de mensagens
+- Monitorar consumo da API OpenAI
+- Validar precisão das respostas da IA
+
+## Comandos Úteis
+
+```bash
+# Para reiniciar o servidor backend
+cd backend && npm run start:dev
+
+# Para verificar erros de compilação
+cd backend && npx tsc --noEmit
+
+# Estrutura alternative-ai disponível em:
+# E:\Clientes\Natuzap\alternative-ai
+```

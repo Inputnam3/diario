@@ -1,0 +1,12 @@
+{
+  "name": "diario-fit-supabase-setup",
+  "version": "0.0.1",
+  "description": "Notes and files for future Supabase integration with Diário Fit",
+  "scripts": {
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop"
+  },
+  "devDependencies": {
+    "supabase": "^1.0.0"
+  }
+}

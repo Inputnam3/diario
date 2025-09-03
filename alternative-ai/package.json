@@ -1,0 +1,29 @@
+{
+  "name": "alternative-ai-services",
+  "version": "1.0.0",
+  "description": "Alternative AI services for nutrition tracking",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "node dist/example.js",
+    "dev": "ts-node example.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@azure/cognitiveservices-computervision": "^8.0.0",
+    "@azure/ms-rest-js": "^2.6.0",
+    "@google-cloud/speech": "^6.0.0",
+    "@google-cloud/vision": "^4.0.0",
+    "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.2.0",
+    "axios": "^1.0.0",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.123",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.0.0"
+  }
+}

@@ -1,0 +1,41 @@
+services:
+  # Removendo o serviço do PostgreSQL, vamos tentar SQLite
+  # postgres-evolution:
+  #   image: postgres:15
+  #   container_name: postgres-evolution
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: evolutionuser
+  #     POSTGRES_PASSWORD: evolution123 # Senha simplificada
+  #     POSTGRES_DB: evolutiondb
+  #   volumes:
+  #     - postgres_evolution_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5433:5432" # Porta do host 5433 para não conflitar com o Natuzap se estiver local
+  #   networks:
+  #     default:
+  #       aliases:
+  #         - postgres # Alias para que 'postgres' resolva para este container
+  
+  evolution-api:
+    image: atendai/evolution-api:latest
+    container_name: evolution-api
+    restart: always
+    # depends_on:
+    #   - postgres-evolution
+    ports:
+      - "8080:8080"  # Porta do host : Porta do container
+    volumes:
+      - evolution_data:/evolution-api/dist/data  # Volume para persistir dados
+    environment:
+      - AUTHENTICATION_API_KEY=true  # Habilita autenticação por API Key
+      - AUTHENTICATION_API_KEY_KEY=meu_token_secreto_123 # Token fixo para facilitar
+      - SERVER_URL=http://localhost:8080 # URL base da API
+      - CORS_ORIGIN=*  # Permite requisições de qualquer origem (ajuste para produção)
+      # Configurações do Banco de Dados para SQLite
+      - DATABASE_PROVIDER=sqlite
+      - DATABASE_URL=file:./evolution.db
+
+volumes:
+  evolution_data:
+  # postgres_evolution_data:

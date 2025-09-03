@@ -1,0 +1,65 @@
+const { Client } = require('pg');
+
+// Carregar variáveis de ambiente do .env do backend
+require('dotenv').config({ path: './backend/.env' });
+
+// Configurações do banco de dados
+const dbConfig = {
+  host: process.env.DATABASE_HOST,
+  port: process.env.DATABASE_PORT,
+  user: process.env.DATABASE_USERNAME,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
+};
+
+// Função principal
+async function main() {
+  const client = new Client(dbConfig);
+  
+  try {
+    // Conectar ao banco de dados
+    await client.connect();
+    console.log('Conectado ao banco de dados com sucesso.');
+    
+    // Verificar tabelas
+    const tables = ['profiles', 'consumptions', 'nutrition_goals'];
+    
+    for (const table of tables) {
+      console.log(`\n--- Estrutura da tabela ${table} ---`);
+      const res = await client.query(`
+        SELECT column_name, data_type, is_nullable, column_default
+        FROM information_schema.columns
+        WHERE table_name = $1
+        ORDER BY ordinal_position;
+      `, [table]);
+      
+      console.log('Colunas:');
+      res.rows.forEach(row => {
+        console.log(`  ${row.column_name} (${row.data_type}) ${row.is_nullable === 'YES' ? 'NULL' : 'NOT NULL'} ${row.column_default ? `DEFAULT ${row.column_default}` : ''}`);
+      });
+      
+      // Verificar constraints (chaves primárias, estrangeiras, etc)
+      console.log('\nConstraints:');
+      const constraintsRes = await client.query(`
+        SELECT constraint_name, constraint_type
+        FROM information_schema.table_constraints
+        WHERE table_name = $1;
+      `, [table]);
+      
+      constraintsRes.rows.forEach(row => {
+        console.log(`  ${row.constraint_name} (${row.constraint_type})`);
+      });
+    }
+    
+    console.log('\n--- Verificação concluída ---');
+  } catch (err) {
+    console.error('Erro ao verificar tabelas:', err);
+  } finally {
+    // Fechar a conexão
+    await client.end();
+    console.log('Conexão com o banco de dados encerrada.');
+  }
+}
+
+// Executar a função principal
+main();

@@ -1,0 +1,73 @@
+# Brainstorming de Nichos para Exploração
+
+## 🧠 Nichos Identificados
+
+### 1. **Restaurantes e Lanchonetes**
+   - **Subníveis**: Pizzarias, hambúrguerias, delivery de marmitas, food trucks.
+   - **Problemas**: Cardápio desatualizado, postagens manuais, baixa conversão online.
+   - **Soluções**:
+     - Cardápio digital com atualização em tempo real.
+     - Geração automática de stories/postagens.
+     - Integração com WhatsApp para pedidos.
+   - **Diferencial**: Entregar tudo pronto em 24h.
+
+### 2. **Lojas de Varejo (Físicas e Online)**
+   - **Subníveis**: Conveniências, mercados locais, lojas de roupas.
+   - **Problemas**: Dificuldade em divulgar promoções, estoque mal gerido.
+   - **Soluções**:
+     - Sistema de promoções com divulgação automática.
+     - Loja virtual integrada ao WhatsApp.
+     - Chatbot para atendimento.
+   - **Diferencial**: Solução tudo-em-um com baixo custo.
+
+### 3. **Prestadores de Serviços (Autônomos)**
+   - **Subníveis**: Cabeleireiros, manicures, personal trainers, consultores.
+   - **Problemas**: Baixa visibilidade online, dificuldade em gerar leads.
+   - **Soluções**:
+     - Landing page otimizada com agendamento.
+     - Divulgação automática em redes sociais.
+     - Presença no Google Meu Negócio.
+   - **Diferencial**: Automação completa de marketing digital.
+
+### 4. **Educação e Cursos Online**
+   - **Subníveis**: Professores particulares, coaches, criadores de conteúdo.
+   - **Problemas**: Dificuldade em criar conteúdo, engajar alunos.
+   - **Soluções**:
+     - Plataforma de ensino simples com WhatsApp.
+     - Geração de materiais com IA.
+     - Chatbot para dúvidas frequentes.
+   - **Diferencial**: Criação de conteúdo 10x mais rápida.
+
+### 5. **Saúde e Bem-Estar**
+   - **Subníveis**: Clínicas, consultórios, fisioterapeutas, nutricionistas.
+   - **Problemas**: Agenda cheia, lembretes manuais, presença fraca online.
+   - **Soluções**:
+     - Sistema de agendamento com lembretes.
+     - Landing page com depoimentos.
+     - Conteúdo educativo gerado por IA.
+   - **Diferencial**: Automação de processos administrativos.
+
+### 6. **Hotéis e Pousadas**
+   - **Subníveis**:Hotéis boutique, pousadas rurais, Airbnbs.
+   - **Problemas**: Baixa taxa de ocupação, presença digital fraca.
+   - **Soluções**:
+     - Site com integração de reservas.
+     - Divulgação automática em redes sociais.
+     - Chatbot para reservas e dúvidas.
+   - **Diferencial**: Solução completa de digitalização.
+
+## 🎯 Critérios para Escolher um Nicho
+
+1. **Facilidade de encontrar leads** (ex: usando Google Maps).
+2. **Alto volume de concorrentes** (indica demanda).
+3. **Baixa qualidade de soluções atuais** (espaço para inovação).
+4. **Capacidade de entregar valor rápido** (MVP viável).
+5. **Monetização clara** (assinatura, projeto único, etc).
+
+## 🧭 Próximos Passos
+
+- Definir qual nicho explorar primeiro.
+- Escolher tipo de solução a oferecer.
+- Definir resultados a entregar para o cliente.
+- Montar proposta de valor e funil de prospecção.
+- Gerar leads automaticamente com scraping.

@@ -1,0 +1,58 @@
+Progresso do Projeto Natuzap - Assistente Nutricional com OpenAI
+==============================================================
+
+Data: 21/08/2025
+
+O que foi feito:
+---------------
+
+1.  Análise da estrutura do projeto Node.js/NestJS.
+2.  Criação do módulo `AssistantModule` com seus componentes básicos:
+    *   `assistant.module.ts`
+    *   `assistant.service.ts`
+    *   `assistant.controller.ts`
+3.  Integração do `AssistantModule` ao `AppModule`.
+4.  Instalação da biblioteca `openai` para interagir com a API da OpenAI.
+5.  Configuração do `.env` para incluir a chave da API da OpenAI.
+6.  Criação do prompt detalhado para o assistente nutricional (`prompt_nutrizap.txt`) e sua integração no módulo do assistente.
+7.  Implementação inicial das funções para integração com a OpenAI:
+    *   Configuração para chamada de funções (tools) pela API.
+    *   Implementação da função `registra_refeicao`.
+    *   Implementação da função `lista_categorias`.
+8.  Compilação bem-sucedida do projeto após as modificações.
+9.  Preparação para testes com comandos curl/PowerShell.
+
+Próximos passos:
+----------------
+
+1.  Testar o endpoint do assistente com mensagens de exemplo.
+2.  Implementar mais funções como `registra_agua`, `lista_alimentos`, etc.
+3.  Aprimorar o tratamento de unidades de medida (copos, xícaras, etc.).
+4.  Implementar autenticação para obter o `userId` real do usuário logado.
+5.  Criar uma interface de frontend para interagir com o assistente.
+
+Arquivos modificados/criados:
+-----------------------------
+
+*   `E:\Clientes\Natuzap\backend\src\assistant\assistant.module.ts`
+*   `E:\Clientes\Natuzap\backend\src\assistant\assistant.service.ts`
+*   `E:\Clientes\Natuzap\backend\src\assistant\assistant.controller.ts`
+*   `E:\Clientes\Natuzap\backend\src\assistant\prompt.txt`
+*   `E:\Clientes\Natuzap\backend\src\app.module.ts`
+*   `E:\Clientes\Natuzap\backend\.env`
+
+Comandos para testar (PowerShell):
+----------------------------------
+
+```powershell
+Invoke-WebRequest -Uri http://localhost:3000/assistant/message -Method POST -Body (ConvertTo-Json @{message="Almocei 150g de frango grelhado com salada de folhas"; userId="usuário-teste-id"}) -ContentType "application/json"
+```
+
+```powershell
+$body = @{
+    message = "Almocei150g de frango grelhado com salada de folhas"
+    userId = "usuário-teste-id"
+} | ConvertTo-Json
+
+Invoke-WebRequest -Uri http://localhost:3000/assistant/message -Method POST -Body $body -ContentType "application/json"
+```

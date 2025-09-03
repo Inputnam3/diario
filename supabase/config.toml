@@ -1,0 +1,22 @@
+# supabase/config.toml
+
+project_id = "natuzap"
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+
+[studio]
+port = 3000
+
+[inbucket]
+smtp_port = 54324
+pop3_port = 54325
+
+[storage]
+file_size_limit = "50MB"
+
+[auth]
+enable_signup = true

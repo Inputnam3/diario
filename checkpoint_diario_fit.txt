@@ -1,0 +1,98 @@
+# Checkpoint - Projeto Diário Fit
+
+## Data: 15/08/2025
+
+## Onde Estamos:
+
+### Backend (NestJS)
+✅ Configuração inicial do projeto NestJS
+✅ Integração com PostgreSQL via TypeORM
+✅ Criação das entidades (User, Food, Entry)
+✅ Implementação dos serviços (UsersService, FoodsService, EntriesService)
+✅ Criação do DashboardService com cálculos de IMC e TMB
+✅ Integração com Twilio para WhatsApp
+✅ Criação dos endpoints de autenticação (login/registro)
+✅ Criação dos endpoints do dashboard (recent-entries, daily-summary, bmi, bmr)
+✅ Configuração do ValidationPipe global
+
+### Frontend (React/Vite)
+✅ Configuração inicial do projeto React com Vite
+✅ Implementação do sistema de rotas
+✅ Criação da página de login/registro
+✅ Criação do dashboard com componentes (OverviewCards, MacroPie, RecentTable)
+✅ Criação da página de perfil do usuário
+✅ Integração com o backend via fetch API
+✅ Adição do token JWT no header das requisições
+
+## Onde Paramos:
+
+### Problemas de Autenticação
+❌ Login e registro estão falhando com erro 400 (Bad Request)
+❌ O backend está reclamando que propriedades não deveriam existir nos DTOs
+❌ Necessário investigar melhor os logs do backend e o payload do frontend
+
+### Integração com WhatsApp
+✅ Bot está configurado para receber mensagens
+✅ Processamento básico de mensagens implementado
+✅ Comandos para registro de alimentos, cálculo de IMC e meta diária
+❌ Necessário testar a integração completa com o Twilio
+
+### Dashboard
+✅ Componentes do dashboard estão buscando dados do backend
+❌ Necessário verificar se os dados estão sendo exibidos corretamente
+❌ Necessário testar a funcionalidade de edição do perfil
+
+## Próximos Passos:
+
+### 1. Resolver Problemas de Autenticação
+- Verificar logs detalhados do backend durante login/registro
+- Verificar payload enviado pelo frontend
+- Testar endpoints com curl/Postman
+- Corrigir validação nos DTOs se necessário
+
+### 2. Testar Integração com WhatsApp
+- Configurar credenciais reais do Twilio
+- Testar envio de mensagens para o bot
+- Verificar se os dados estão sendo salvos no banco
+- Testar todos os comandos implementados
+
+### 3. Finalizar Dashboard
+- Verificar exibição correta dos dados
+- Testar edição do perfil do usuário
+- Verificar cálculos de IMC e TMB
+- Testar atualização de peso, altura e meta calórica
+
+### 4. Preparar Demonstração
+- Criar script de demonstração
+- Testar fluxo completo do usuário
+- Preparar dados de exemplo
+- Documentar funcionalidades principais
+
+## Tarefas Pendentes:
+
+### Backend:
+- [ ] Corrigir erros de validação nos DTOs de autenticação
+- [ ] Verificar tratamento de erros nos serviços
+- [ ] Testar todos os endpoints com dados reais
+
+### Frontend:
+- [ ] Verificar exibição correta dos dados do dashboard
+- [ ] Testar formulários de edição
+- [ ] Verificar tratamento de erros nas requisições
+- [ ] Melhorar feedback visual para o usuário
+
+### Integração:
+- [ ] Testar comunicação entre frontend e backend
+- [ ] Testar integração com Twilio
+- [ ] Verificar persistência de dados no banco
+
+### Documentação:
+- [ ] Criar script de demonstração
+- [ ] Documentar endpoints da API
+- [ ] Criar guia de instalação e configuração
+
+## Observações:
+- O projeto está funcional em grande parte, mas precisa de ajustes finos
+- A autenticação é o principal ponto de falha no momento
+- A integração com WhatsApp está implementada mas precisa ser testada com credenciais reais
+- O dashboard está buscando dados do backend, mas precisa de testes completos

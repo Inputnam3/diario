@@ -1,0 +1,1 @@
+# Este arquivo transforma o diretório 'test_api' em um pacote Python.

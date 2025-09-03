@@ -1,0 +1,14 @@
+Progresso do projeto Natuzap - 30/08/2025
+
+1. Correção do erro "Rendered fewer hooks than expected" no componente DashboardHome:
+   - Reorganização da ordem dos hooks no arquivo frontend/src/pages/dashboard/Home.tsx
+   - Separação da verificação de carregamento da autenticação (authLoading) no início do componente
+   - Movido a verificação de carregamento dos dados (isLoadingProfile, isLoadingDailySummary, etc.) para após a declaração de todos os hooks
+   - Garantia de que os hooks sempre são chamados na mesma ordem, independentemente do estado de carregamento
+
+2. O componente DashboardHome agora está funcionando corretamente sem o erro de hooks
+
+Próximos passos:
+- Continuar com o desenvolvimento das funcionalidades do dashboard
+- Implementar testes para garantir que o erro não volte a ocorrer
+- Revisar outros componentes para verificar se há problemas similares com a ordem dos hooks

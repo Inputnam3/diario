@@ -1,0 +1,25 @@
+# Render deployment configuration
+services:
+  - type: web
+    name: natuzap-backend
+    env: node
+    buildCommand: npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+    domains:
+      - natuzap-backend.onrender.com
+
+  - type: web
+    name: natuzap-frontend
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://natuzap-backend.onrender.com
+    domains:
+      - natuzap-frontend.onrender.com

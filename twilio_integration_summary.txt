@@ -1,0 +1,72 @@
+# Resumo da Integração com Twilio - 20/08/2025
+
+## O que foi feito:
+
+1. **Configuração Inicial**
+   - Criada estrutura básica para integração com Twilio
+   - Configurado módulo do WhatsApp no backend
+   - Implementado serviço de envio de mensagens
+
+2. **Backend**
+   - Criado `TwilioService` para gerenciar a comunicação com a API da Twilio
+   - Implementado webhook para recebimento de mensagens
+   - Adicionada validação de assinatura para segurança
+   - Criado endpoint de teste `test-send` para facilitar os testes
+
+3. **Frontend**
+   - Criado componente de integração com WhatsApp
+   - Adicionada interface para visualização do status de conexão
+   - Implementado formulário para envio de mensagens
+
+4. **Segurança**
+   - Configuradas variáveis de ambiente para credenciais
+   - Implementada validação de webhooks
+   - Adicionado tratamento de erros
+
+## Próximos Passos:
+
+1. **Testes**
+   - Testar envio/recebimento de mensagens em modo de produção
+   - Validar transcrição de áudio
+   - Testar cenários de erro
+
+2. **Melhorias**
+   - Adicionar logs detalhados
+   - Implementar fila para processamento de mensagens
+   - Adicionar suporte a mídia (imagens, documentos)
+
+3. **Produção**
+   - Configurar número oficial do WhatsApp Business
+   - Solicitar aprovação da conta na Twilio
+   - Configurar monitoramento e alertas
+
+## Arquivos Criados/Modificados:
+
+- `backend/src/whatsapp/twilio.service.ts` (atualizado)
+- `backend/src/whatsapp/whatsapp.controller.ts` (atualizado)
+- `backend/src/whatsapp/whatsapp.module.ts` (atualizado)
+- `backend/.env` (atualizado com as credenciais da Twilio)
+- `backend/test-twilio.js` (novo script de teste)
+- `backend/test-twilio-prod.js` (novo script de teste para produção)
+- `TWILIO_TEST_GUIDE.md` (novo guia de testes)
+
+## Comandos Úteis:
+
+```bash
+# Iniciar servidor de desenvolvimento
+npm run start:dev
+
+# Expor porta local (usando ngrok)
+ngrok http 3000
+
+# Instalar dependências
+npm install twilio @types/twilio
+
+# Executar testes
+node test-twilio.js
+```
+
+## Links Úteis:
+- Painel da Twilio: https://console.twilio.com/
+- Documentação da API: https://www.twilio.com/docs/whatsapp/api
+- Sandbox do WhatsApp: https://console.twilio.com/us1/develop/sms/try-it-out/whatsapp-learn
